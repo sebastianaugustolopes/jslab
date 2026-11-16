@@ -1,13 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSLab | Fundamentos de JavaScript</title>
-    <script src="assets/js/script.js"></script>
+    <title>JSLab | Painel de Pedidos</title>
+    <!-- defer: baixa em paralelo ao HTML, mas só executa depois do DOM
+         pronto, e preserva a ordem entre os dois arquivos -->
+    <script src="assets/js/dados.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
 </head>
 <body>
-    <h1>JSLab</h1>
-    <p>Abra o console do navegador para acompanhar os experimentos</p>
+    <header>
+        <h1>Painel de Pedidos</h1>
+        <p id="contador-pedidos"></p>
+    </header>
+
+    <section id="controles">
+        <input type="search" id="campo-busca" placeholder="Buscar por cliente...">
+
+        <select id="filtro-categoria">
+            <option value="todas">Todas as categorias</option>
+        </select>
+
+        <select id="filtro-status">
+            <option value="todos">Todos os status</option>
+        </select>
+
+        <button type="button" id="botao-ordenar-valor" data-direcao="asc">
+            Ordenar por valor ▲
+        </button>
+    </section>
+
+    <main>
+        <ul id="lista-pedidos"></ul>
+        <p id="mensagem-vazia" hidden>Nenhum pedido encontrado.</p>
+    </main>
 </body>
 </html>

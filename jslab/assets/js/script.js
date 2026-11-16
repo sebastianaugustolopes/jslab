@@ -1,40 +1,10 @@
-const produtos = ["banana", "maçã", "pera"]
-const valores = [100, 0, 0]
-const desconto = [0, 5, 0]
-let dinheiro = 100
+// UNIDADE 1 — DOM Básico
+// Apenas selecionamos elementos e confirmamos que dados.js já chegou aqui.
 
-let soma = 0
-let totalDesconto = 0
+const elementoContador = document.querySelector("#contador-pedidos")
+const elementoLista = document.querySelector("#lista-pedidos")
 
-for(let x = 0; x < produtos.length; x++){
-    console.log(`Produto: ${produtos[x]}, preço: ${valores[x]}`)
-    let valorDesconto = (valores[x] * desconto[x]) / 100
+// `pedidos` vem de dados.js (carregado antes, veja a ordem dos <script> no HTML)
+elementoContador.textContent = `${pedidos.length} pedido(s) cadastrado(s)`
 
-    if(desconto[x] > 0){
-        console.log(`Esse produto tem desconto de ${desconto[x]}%`)
-    }
-    totalDesconto += valorDesconto
-    soma += valores[x]
-}
-
-let valorFinal = soma - totalDesconto
-
-if(valorFinal > dinheiro){
-    console.log("Vamos repensar a sua vida financeira?")
-    console.log(valorFinal)
-} else if(valorFinal === dinheiro){
-    console.log("Não restará salto em conta após a realizar essa compra. Repense!")
-    console.log(valorFinal)
-} else{
-    valorRestante = dinheiro - valorFinal
-    console.log(`Compra moderada. Valor restante: ${valorRestante}`)
-    console.log(valorFinal)
-}
-
-console.log(soma)
-console.log(totalDesconto)
-console.log(valorFinal)
-
-console.log(typeof soma)
-console.log(typeof totalDesconto)
-console.log(typeof produtos)
+console.log("Elementos encontrados:", { elementoContador, elementoLista })
